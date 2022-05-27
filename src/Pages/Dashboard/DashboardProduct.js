@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // import { toast } from "react-toastify";
 
 const DeshboardProduct = ({ product }) => {
@@ -11,11 +12,22 @@ const DeshboardProduct = ({ product }) => {
   //   }, []);
   return (
     <tr>
-      <th>1</th>
+      <th></th>
       <td>{product.name}</td>
       <td>{product.price}</td>
       <td>{product.quantity}</td>
-      <td>{product.email}</td>
+      <td>
+        <div class="avatar">
+          <div class="w-8 rounded">
+            <img src={product.image} alt="Tailwind-CSS-Avatar-component" />
+          </div>
+        </div>
+      </td>
+      <td>
+        <Link to={`/dashboard/order/${product._id}`}>
+          <button className="btn btn-link">Buy Now</button>
+        </Link>
+      </td>
     </tr>
   );
 };
