@@ -1,10 +1,12 @@
 // import logo from "./logo.svg";
 // import "./App.css";
 
+import Navbar from "./Pages/Shared/Navber";
+
 function App() {
   return (
     <div className="App">
-      <button class="btn btn-primary">Button</button>
+      <Navbar></Navbar>
     </div>
   );
 }
