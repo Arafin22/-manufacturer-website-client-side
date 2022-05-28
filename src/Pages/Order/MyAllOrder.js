@@ -12,7 +12,7 @@ const MyAllOrder = () => {
   useEffect(() => {
     if (user) {
       fetch(
-        `https://safe-inlet-43341.herokuapp.com/order?email=${user.email}`,
+        `https://shielded-savannah-13705.herokuapp.com/order?email=${user.email}`,
         {
           method: "GET",
           headers: {

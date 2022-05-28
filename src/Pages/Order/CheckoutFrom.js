@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
-const CheckoutForm = ({ productt }) => {
+const CheckoutForm = ({ Order }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
@@ -10,17 +10,20 @@ const CheckoutForm = ({ productt }) => {
   const [transactionId, setTransactionId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
 
-  const { _id, price, user, quantity, product } = productt;
+  const { _id, price, user, quantity, product } = Order;
 
   useEffect(() => {
-    fetch("https://safe-inlet-43341.herokuapp.com/create-payment-intent", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-      body: JSON.stringify({ price }),
-    })
+    fetch(
+      "https://shielded-savannah-13705.herokuapp.com/create-payment-intent",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: JSON.stringify({ price }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data?.clientSecret) {
@@ -77,7 +80,7 @@ const CheckoutForm = ({ productt }) => {
         quantity: quantity,
         transactionId: paymentIntent.id,
       };
-      fetch(`https://safe-inlet-43341.herokuapp.com/order/${_id}`, {
+      fetch(`https://shielded-savannah-13705.herokuapp.com/order/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

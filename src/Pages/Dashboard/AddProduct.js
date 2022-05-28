@@ -20,7 +20,7 @@ const AddProduct = () => {
     const email = userinfo.email;
     console.log(name, price);
 
-    fetch("https://safe-inlet-43341.herokuapp.com/product", {
+    fetch("https://shielded-savannah-13705.herokuapp.com/product", {
       method: "POST",
       body: JSON.stringify({
         name,

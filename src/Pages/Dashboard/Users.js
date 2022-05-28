@@ -17,7 +17,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("https://safe-inlet-43341.herokuapp.com/users", {
+    fetch("https://shielded-savannah-13705.herokuapp.com/users", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
