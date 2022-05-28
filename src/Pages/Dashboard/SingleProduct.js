@@ -4,12 +4,12 @@ import "./SingleProduct.css";
 
 const SingleProduct = (props) => {
   // console.log(props);
-  const { _id, name, image, price, description, supplier, email } = props.pd;
+  const { _id, name, image, price } = props.pd;
 
-  const hendelDelevery = () => {
-    const quantity = parseInt(quantity);
-    console.log(quantity);
-  };
+  // const hendelDelevery = () => {
+  //   const quantity = parseInt(quantity);
+  //   console.log(quantity);
+  // };
   return (
     <div class="card w-96 bg-base-100 shadow-xl">
       <figure class="px-10 pt-10">
@@ -17,13 +17,10 @@ const SingleProduct = (props) => {
       </figure>
       <div class="card-body items-center text-center">
         <h2 class="card-title"> {name}</h2>
-        <h2 class="card-title"> Price : {price}</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <h2 class="card-title"> Price :$ {price}</h2>
         <div class="card-actions">
           <Link to={`/dashboard/order/${_id}`}>
-            <button onClick={hendelDelevery} className="btn btn-link">
-              Buy Now
-            </button>
+            <button className="btn btn-link">Buy Now</button>
           </Link>
         </div>
       </div>

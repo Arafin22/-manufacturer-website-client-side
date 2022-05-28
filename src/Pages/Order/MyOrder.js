@@ -15,7 +15,7 @@ const MyOrder = () => {
   console.log(product);
   // const udproduct =product.quantity;
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://safe-inlet-43341.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [isReload]);
@@ -41,7 +41,7 @@ const MyOrder = () => {
     };
 
     if (newQuantity > 9) {
-      fetch(`http://localhost:5000/order/${id}`, {
+      fetch(`https://safe-inlet-43341.herokuapp.com/order/${id}`, {
         method: "PUT",
 
         headers: {

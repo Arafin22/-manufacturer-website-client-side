@@ -11,12 +11,15 @@ const MyAllOrder = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order?email=${user.email}`, {
-        method: "GET",
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      })
+      fetch(
+        `https://safe-inlet-43341.herokuapp.com/order?email=${user.email}`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
         .then((res) => {
           console.log("res", res);
           if (res.status === 401 || res.status === 403) {
@@ -34,7 +37,7 @@ const MyAllOrder = () => {
 
   return (
     <div>
-      <h2>My Appointments: {orders.length}</h2>
+      <h2>My Orders: {orders.length}</h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
           <thead>
@@ -42,8 +45,8 @@ const MyAllOrder = () => {
               <th></th>
               <th>Name</th>
               <th>price</th>
-              <th>user</th>
               <th>email</th>
+              <th>user</th>
               <th>Payment</th>
             </tr>
           </thead>

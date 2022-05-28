@@ -19,12 +19,12 @@ const Payment = () => {
   // console.log(product);
   // const udproduct =product.quantity;
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${id}`)
+    fetch(`https://safe-inlet-43341.herokuapp.com/order/${id}`)
       .then((res) => res.json())
       .then((data) => setProductt(data));
   }, [isReload]);
   //   const { id } = useParams();
-  //   const url = `http://localhost:5000/order/${id}`;
+  //   const url = `https://safe-inlet-43341.herokuapp.com/order/${id}`;
 
   //   const { data, isLoading } = useQuery(["orderss", id], () =>
   //     fetch(url, {
