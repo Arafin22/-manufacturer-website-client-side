@@ -68,7 +68,7 @@ const MyOrder = () => {
           <img src={product.image} class="max-w-sm rounded-lg shadow-2xl" />
           <div>
             <h1 class="text-5xl font-bold">{product.name}</h1>
-            <h1 class="text-5xl font-bold">{product.quantity}</h1>
+            <h1 class="text-5xl font-bold">{product.price}</h1>
 
             <p class="py-6">Minimum Order 10 items</p>
             <form onSubmit={handelUpload}>

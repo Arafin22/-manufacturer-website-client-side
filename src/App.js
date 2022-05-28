@@ -18,6 +18,11 @@ import MyProfile from "./Pages/Dashboard/MyProfile";
 import MyAllOrder from "./Pages/Order/MyAllOrder";
 import Order from "./Pages/Order/Order";
 import Review from "./Pages/Dashboard/Review";
+import Payment from "./Pages/Order/Payment";
+import Blogs from "./Pages/Home/Blogs";
+import Portfolio from "./Pages/Home/Portfolio";
+import NotFound from "./Pages/Home/NotFound";
+import Footer from "./Pages/Home/Footer";
 
 function App() {
   return (
@@ -37,6 +42,7 @@ function App() {
         >
           <Route index element={<MyAllOrder></MyAllOrder>}></Route>
           <Route path="order/:id" element={<Order></Order>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
 
           <Route path="review" element={<Review></Review>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
@@ -67,8 +73,13 @@ function App() {
           ></Route>
         </Route>
         <Route path="login" element={<Login />} />
+        <Route path="blogs" element={<Blogs></Blogs>} />
+
+        <Route path="portfolio" element={<Portfolio></Portfolio>} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
+      <Footer></Footer>
       <ToastContainer />
     </div>
   );
